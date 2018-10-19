@@ -160,3 +160,17 @@ models/models.py
         return json.JSONEncoder.default(self, obj)
 
 ```
+
+### 自动生成依赖包
+
+```
+pip freeze > requirements.txt
+
+```
+
+### 安装依赖包
+
+```
+pip install -r Requirements.txt
+
+```
