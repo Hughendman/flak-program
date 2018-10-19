@@ -23,9 +23,12 @@ class AlchemyEncoder(json.JSONEncoder):
                         fields[field] = (datetime.datetime.min + data).time().isoformat()
                     else:
                         fields[field] = None
+                if "query" in fields:
+                    del fields["query"]
+                if "query_class" in fields:
+                    del fields["query_class"]
             # a json-encodable dict
             return fields
-
         return json.JSONEncoder.default(self, obj)
 
 
@@ -42,14 +45,6 @@ class AuthPermission(db.Model):
         self.name = name
         self.codename = codename
 
-    def to_json(self):
-        json_auth = {
-            'id': self.id,
-            'content_type_id': self.content_type_id,
-            'name': self.name,
-            'codename': self.codename
-        }
-        return json_auth
 
     def __repr__(self):
         return '<User %r>' % (self.codename)
