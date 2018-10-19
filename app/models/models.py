@@ -14,7 +14,7 @@ class AlchemyEncoder(json.JSONEncoder):
                 try:
                     json.dumps(data)  # this will fail on non-encodable values, like other classes
                     fields[field] = data
-                except TypeError:  # 添加了对datetime的处理
+                except TypeError:
                     if isinstance(data, datetime.datetime):
                         fields[field] = data.isoformat()
                     elif isinstance(data, datetime.date):
