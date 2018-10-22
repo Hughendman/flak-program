@@ -161,6 +161,18 @@ models/models.py
 
 ```
 
+### 跨域处理
+
+#### 安装
+
+#### 使用
+
+```
+from flask_cors import CORS
+CORS(app,supports_credentials=True)
+
+```
+
 ### 自动生成依赖包
 
 ```
