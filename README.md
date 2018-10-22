@@ -172,6 +172,18 @@ from flask_cors import CORS
 CORS(app,supports_credentials=True)
 
 ```
+### 集成前端
+
+```
+app = Flask(__name__,
+                static_folder = "./dist/static",
+                template_folder = "./dist")
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+
+```
 
 ### 自动生成依赖包
 
