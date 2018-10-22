@@ -1,10 +1,10 @@
 import MySQLdb
-from config import config
+from app.db import MYSQLDB_DATABASE_URI
 
 class WRITE():
 
-    def __init__(self,):
-        db = MySQLdb.connect("localhost", "root", "abcd234", "superset_board", charset='utf8')
+    def __init__(self):
+        db = MySQLdb.connect(MYSQLDB_DATABASE_URI["host"], MYSQLDB_DATABASE_URI["user"], MYSQLDB_DATABASE_URI["pwd"], MYSQLDB_DATABASE_URI["db"], charset='utf8')
         results = {}
         cursor = db.cursor()
         sql = "SELECT * FROM auth_permission"
