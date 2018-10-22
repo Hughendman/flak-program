@@ -174,3 +174,7 @@ pip freeze > requirements.txt
 pip install -r Requirements.txt
 
 ```
+
+### 版本
+10-18 first commit
+10-22 mysqldb commit

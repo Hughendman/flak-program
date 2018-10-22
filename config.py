@@ -15,6 +15,13 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://root:abcd234@localhost:3306/superset_board?charset=utf8mb4'
+    MYSQLDB_DATABASE_URI = {
+        "host":"localhost",
+        "user":"root",
+        "pwd":"abcd234",
+        "db":"superset_board",
+        "charset": 'utf8'
+    }
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 class TestingConfig(Config):

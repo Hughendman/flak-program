@@ -13,3 +13,9 @@ def module():
     authPermission = AuthPermission.query.all()
     auth = json.dumps(authPermission, cls=AlchemyEncoder)
     return auth
+
+@auth.route('/search', methods=['GET', 'POST'])
+def search():
+    authPermission = WRITE()
+    res = authPermission.search()
+    return jsonify(res)
